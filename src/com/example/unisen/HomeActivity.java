@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class HomeActivity extends Activity {
 
@@ -14,10 +15,14 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         
+        ImageView image = (ImageView)findViewById(R.id.unisen_photo_id);
+        image.setImageResource(R.drawable.unisen_photo);
+        
         Button button_start = (Button)findViewById(R.id.start_id);
         Button button_rank = (Button)findViewById(R.id.rank_id);
         // for debug
         Button button_result = (Button)findViewById(R.id.result_id);
+        Button button_sub = (Button)findViewById(R.id.sub_id);
         
         
         button_start.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +45,13 @@ public class HomeActivity extends Activity {
         button_result.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
         		Intent intent = new Intent(HomeActivity.this, ResultActivity.class);
+        		startActivity(intent);
+        		finish();
+        	}
+        });
+        button_sub.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent intent = new Intent(HomeActivity.this, SubActivity.class);
         		startActivity(intent);
         		finish();
         	}

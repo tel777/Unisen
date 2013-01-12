@@ -2,25 +2,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity" >
-
-    <Button 
-       	android:id="@+id/start_id"
-        android:layout_width="wrap_content"
+    
+    <ImageView
+        android:id="@+id/unisen_photo_id"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="START"
+        android:contentDescription="UNISEN"
         />
-    <Button 
-       	android:id="@+id/rank_id"
-        android:layout_width="wrap_content"
+	<LinearLayout 
+	    android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RANKING"
-        />
+	    >
+	    <Button 
+	       	android:id="@+id/start_id"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="START"
+	        />
+	    <Button 
+	       	android:id="@+id/rank_id"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="RANKING"
+	        />
+    </LinearLayout>
     <Button 
        	android:id="@+id/result_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RESULT(for debug)"
+        />
+    <Button 
+       	android:id="@+id/sub_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUB(for debug)"
         />
 
 </LinearLayout>
