@@ -26,6 +26,14 @@
             android:name="com.example.unisen.SubActivity"
             android:label="@string/title_activity_sub" >
         </activity>
+        <activity
+            android:name="com.example.unisen.CountActivity"
+            android:label="@string/title_activity_count" >
+        </activity>
+        <activity
+            android:name="com.example.unisen.RankActivity"
+            android:label="@string/title_activity_rank" >
+        </activity>
     </application>
 
 </manifest>
