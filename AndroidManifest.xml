@@ -13,7 +13,10 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <provider android:name="RankProvider" android:authorities="com.example.unisen.rankprovider" />
+        <provider
+            android:name="com.example.unisen.RankProvider"
+            android:authorities="com.example.unisen.rankprovider" />
+
         <activity
             android:name="com.example.unisen.HomeActivity"
             android:label="@string/app_name" >
@@ -38,6 +41,10 @@
         <activity
             android:name="com.example.unisen.ResultActivity"
             android:label="@string/title_activity_result" >
+        </activity>
+        <activity
+            android:name="com.example.unisen.TipsActivity"
+            android:label="@string/title_activity_tips" >
         </activity>
     </application>
 

@@ -20,10 +20,10 @@ public class HomeActivity extends Activity {
         
         Button button_start = (Button)findViewById(R.id.start_id);
         Button button_rank = (Button)findViewById(R.id.rank_id);
+        Button button_tips = (Button)findViewById(R.id.tips_id);
         // for debug
         Button button_result = (Button)findViewById(R.id.result_id);
         Button button_sub = (Button)findViewById(R.id.sub_id);
-        
         
         button_start.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
@@ -36,6 +36,14 @@ public class HomeActivity extends Activity {
         button_rank.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
         		Intent intent = new Intent(HomeActivity.this, RankActivity.class);
+        		startActivity(intent);
+        		finish();
+        	}
+        });
+        
+        button_tips.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent intent = new Intent(HomeActivity.this, TipsActivity.class);
         		startActivity(intent);
         		finish();
         	}

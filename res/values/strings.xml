@@ -8,5 +8,6 @@
     <string name="title_activity_count">CountActivity</string>
     <string name="title_activity_rank">RankActivity</string>
     <string name="title_activity_result">ResultActivity</string>
+    <string name="title_activity_tips">TipsActivity</string>
 
 </resources>
