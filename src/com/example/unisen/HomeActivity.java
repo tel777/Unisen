@@ -7,19 +7,22 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class HomeActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         
         Button button_start = (Button)findViewById(R.id.start_id);
         Button button_rank = (Button)findViewById(R.id.rank_id);
+        // for debug
+        Button button_result = (Button)findViewById(R.id.result_id);
+        
         
         button_start.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
-        		Intent intent = new Intent(MainActivity.this, CountActivity.class);
+        		Intent intent = new Intent(HomeActivity.this, CountActivity.class);
         		startActivity(intent);
         		finish();
         	}
@@ -27,11 +30,20 @@ public class MainActivity extends Activity {
         
         button_rank.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
-        		Intent intent = new Intent(MainActivity.this, RankActivity.class);
+        		Intent intent = new Intent(HomeActivity.this, RankActivity.class);
         		startActivity(intent);
         		finish();
         	}
-        });    
+        });
+        
+        //for debug
+        button_result.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent intent = new Intent(HomeActivity.this, ResultActivity.class);
+        		startActivity(intent);
+        		finish();
+        	}
+        });
     }
     
     @Override

@@ -35,6 +35,10 @@
             android:name="com.example.unisen.RankActivity"
             android:label="@string/title_activity_rank" >
         </activity>
+        <activity
+            android:name="com.example.unisen.ResultActivity"
+            android:label="@string/title_activity_result" >
+        </activity>
     </application>
 
 </manifest>
