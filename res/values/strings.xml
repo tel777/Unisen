@@ -7,5 +7,6 @@
     <string name="title_activity_sub">SubActivity</string>
     <string name="title_activity_count">CountActivity</string>
     <string name="title_activity_rank">RankActivity</string>
+    <string name="title_activity_result">ResultActivity</string>
 
 </resources>

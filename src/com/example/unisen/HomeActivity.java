@@ -16,6 +16,9 @@ public class HomeActivity extends Activity {
         
         Button button_start = (Button)findViewById(R.id.start_id);
         Button button_rank = (Button)findViewById(R.id.rank_id);
+        // for debug
+        Button button_result = (Button)findViewById(R.id.result_id);
+        
         
         button_start.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
@@ -31,7 +34,16 @@ public class HomeActivity extends Activity {
         		startActivity(intent);
         		finish();
         	}
-        });    
+        });
+        
+        //for debug
+        button_result.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent intent = new Intent(HomeActivity.this, ResultActivity.class);
+        		startActivity(intent);
+        		finish();
+        	}
+        });
     }
     
     @Override
