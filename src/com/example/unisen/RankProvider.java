@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
+import android.util.Log;
 
 public class RankProvider extends ContentProvider {
 	private DatabaseOpenHelper mOpenHelper;
@@ -17,20 +18,20 @@ public class RankProvider extends ContentProvider {
 
 	@Override
 	public String getType(Uri uri) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
 		SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-		db.insert(DatabaseOpenHelper.DATABASE_NAME, null, values);
+		db.insert("ranks", null, values);
 		return null;
 	}
 
 	@Override
 	public boolean onCreate() {
 		mOpenHelper = new DatabaseOpenHelper(getContext());
+		Log.d("", "Create DB");
 		return true;
 	}
 
@@ -40,7 +41,7 @@ public class RankProvider extends ContentProvider {
 		SQLiteDatabase db = mOpenHelper.getReadableDatabase();
 		
 		SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-		qb.setTables(DatabaseOpenHelper.DATABASE_NAME);
+		qb.setTables("ranks");
 		
 		Cursor ret = qb.query(db, projectionIn, selection, selectionArgs, null, null, sortOrder);
 		
@@ -52,5 +53,4 @@ public class RankProvider extends ContentProvider {
 			String[] selectionArgs) {
 		return 0;
 	}
-
 }

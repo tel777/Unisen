@@ -3,6 +3,7 @@ package com.example.unisen;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	
@@ -19,15 +20,18 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 		//date is UNIXTIME
 		db.execSQL("CREATE TABLE ranks (" + 
 				"_id INTEGER PRIMARY KEY," +
+				"score INTEGER," +
 				"average REAL," +
 				"date INTEGER);"
 				);
 		
+		Log.d("", "CREATE DB");
+		
 		// insert dummy data
 		String insertMe = "INSERT INTO ranks" +
-		"(average, date) VALUES";
-		db.execSQL(insertMe + "(40.5, 1357896755);");
-		db.execSQL(insertMe + "(20.5, 1357983155);");
+		"(score, average, date) VALUES";
+		db.execSQL(insertMe + "(11111, 40.5, 1357896755);");
+		db.execSQL(insertMe + "(1234567, 20.5, 1357983155);");
 	}
 
 	@Override
