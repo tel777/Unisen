@@ -37,7 +37,6 @@ public class HomeActivity extends Activity {
         	public void onClick(View view) {
         		Intent intent = new Intent(HomeActivity.this, RankActivity.class);
         		startActivity(intent);
-        		finish();
         	}
         });
         
@@ -45,7 +44,6 @@ public class HomeActivity extends Activity {
         	public void onClick(View view) {
         		Intent intent = new Intent(HomeActivity.this, TipsActivity.class);
         		startActivity(intent);
-        		finish();
         	}
         });
         
