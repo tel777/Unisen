@@ -21,17 +21,32 @@ public class RankProvider extends ContentProvider {
 		return null;
 	}
 
+	//
+	// --- dbへinsertする方法 ---
+	// ContentResolver contentResolver = getContentResolver();
+	//
+	// ContentValues contentValues = new ContentValues();
+	// contentValues.put("score", スコア);
+	// contentValues.put("average", 平均点);
+	// contentValues.put("date", System.currentTimeMills());
+	// contentResolver.insert(Ranks.CONTENT_URI, contentValues);
+	//
+	// 
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
 		SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-		db.insert("ranks", null, values);
-		return null;
+		int rowId = (int) db.insert("ranks", null, values);
+		
+		if (rowId != -1) {
+			return Uri.withAppendedPath(uri, String.valueOf(rowId));
+		} else {
+			return null;
+		}
 	}
 
 	@Override
 	public boolean onCreate() {
 		mOpenHelper = new DatabaseOpenHelper(getContext());
-		Log.d("", "Create DB");
 		return true;
 	}
 
