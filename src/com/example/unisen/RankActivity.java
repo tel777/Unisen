@@ -26,6 +26,14 @@ public class RankActivity extends Activity {
 		class RankListViewBinder implements SimpleCursorAdapter.ViewBinder{
 			@Override
 			public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
+				//   順位を設定
+				if(columnIndex == cursor.getColumnIndex("_id")) {
+					int rank = cursor.getPosition() + 1;
+					((TextView) view).setText(String.valueOf(rank));
+					return true;
+				}
+				
+				// 日付を設定
 				if(columnIndex == cursor.getColumnIndex("date")) {
 					long unixtime = cursor.getLong(columnIndex);
 					Date date = new Date(unixtime * 1000);
@@ -33,6 +41,7 @@ public class RankActivity extends Activity {
 					((TextView) view).setText(format.format(date));
 					return true;
 				}
+				
 				return false;
 			}
 		}
@@ -44,16 +53,17 @@ public class RankActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rank);
 		
-		DatabaseOpenHelper helper = new DatabaseOpenHelper(this);
-		
 		mCursor = Ranks.getRanksCursor(getContentResolver());
 		
+		// new String[] {...} と　new int[] {...}
+		// の中身がそれぞれ対応している
+		// 例えば、DBのscoreカラムはR.id.score_textに表示される
 		ListAdapter adapter = new RankCursorAdapter(
 				this,
 				R.layout.rank_item,
 				mCursor,
-				new String[] { "score", "average", "date" },
-				new int[] { R.id.score_text, R.id.average_text, R.id.date_text },
+				new String[] { "_id", "score", "average", "date" },
+				new int[] { R.id.rank, R.id.score_text, R.id.average_text, R.id.date_text },
 				0);
 
 		ListView lv = (ListView) findViewById(R.id.rank_list);
