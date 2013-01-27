@@ -4,12 +4,17 @@
     android:layout_height="match_parent"
     tools:context=".SubActivity" >
 
-    <TextView
+    <TextView 
+        android:id="@+id/count_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/hello_world" 
-        android:onClick="onTestClick"/>
+        />
+    <ProgressBar android:id="@+id/progressbar_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:indeterminate="false"
+        style="?android:attr/progressBarStyleHorizontal" />
 
 </RelativeLayout>

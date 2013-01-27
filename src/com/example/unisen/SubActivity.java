@@ -1,29 +1,31 @@
 package com.example.unisen;
 
-import java.util.Random;
-
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Display;
 import android.view.MotionEvent;
+import android.view.Window;
 import android.view.WindowManager;
 
 public class SubActivity extends Activity {
+	CountDownTimer timer;
 	      private float Wran;
 	      private float Hran;  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		//FullScreen
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);  
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		//画面サイズ確認
 		WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
 		Display dp = wm.getDefaultDisplay();
 		int width = dp.getWidth();
 		int height = dp.getHeight();
         //random生成
-        Random rnd = new Random();
-        Wran = rnd.nextInt(width);
-        Hran = rnd.nextInt(height);
+        Wran = (float) Math.floor(Math.random() * ((width-40 - 40 + 1)) + 40) ;
+        Hran = (float) Math.floor(Math.random() * ((height-120 - 40 + 1)) + 40) ;
         
         //Toast.makeText(this, "s"+Wran, Toast.LENGTH_LONG).show();
 		// main.xmlのGUIにはGraphicsViewがないため、
@@ -52,9 +54,8 @@ public class SubActivity extends Activity {
             	int width = dp.getWidth();
             	int height = dp.getHeight();
                 //random生成
-                Random rnd = new Random();
-                Wran = rnd.nextInt(width);
-                Hran = rnd.nextInt(height);
+                Wran = (float) Math.floor(Math.random() * ((width-40 - 40 + 1)) + 40) ;
+                Hran = (float) Math.floor(Math.random() * ((height-120 - 40 + 1)) + 40) ;
             }
         }
 
@@ -63,6 +64,7 @@ public class SubActivity extends Activity {
 
         return true;
     }
+    
     
 /*	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

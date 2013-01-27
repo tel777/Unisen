@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.View;
 
 public class GraphicsView extends View {
@@ -20,7 +19,7 @@ public class GraphicsView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         //clear
-        canvas.drawColor(Color.WHITE);
+        //canvas.drawColor(Color.WHITE);
         
         // Paintを定義(描画をする際のペン的なイメージでOK)
         Paint paint = new Paint();
