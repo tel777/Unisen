@@ -1,12 +1,14 @@
 package com.example.unisen;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
 
 public class SubActivity extends Activity {
 	CountDownTimer timer;
@@ -32,9 +34,36 @@ public class SubActivity extends Activity {
         // Viewクラスを継承したGraphicsViewを自分で作成
         // 画面に登録する
         setContentView(new GraphicsView(this, Wran, Hran ) );
-	
+        countDown();
 	}  
     
+	private void countDown() {
+		timer = new CountDownTimer( 9999, 1000 ){
+			public void onTick(long millisUntilFinished){
+		        setContentView(R.layout.activity_sub);
+		        ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressbar_horizontal);
+		        // 水平プログレスバーの最大値を設定します
+		        progressBar.setMax(10);
+				// 水平プログレスバーの値を設定します
+		        int time =  (int)(millisUntilFinished/1000);
+		        progressBar.setProgress(time);
+			}
+			public void onFinish(){
+				
+				Intent intent = new Intent(SubActivity.this, ResultActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		}.start();
+	}
+	
+	//戻るボタンを押したときにカウントダウンストップする
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		timer.cancel();
+	}
+	
 	/**
      * タッチイベント
      */
