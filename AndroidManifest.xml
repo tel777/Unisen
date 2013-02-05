@@ -44,8 +44,13 @@
         </activity>
 
         <provider
-            android:name="RankProvider"
+            android:name="com.example.unisen.RankProvider"
             android:authorities="com.example.unisen" />
+
+        <activity
+            android:name="com.example.unisen.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>
