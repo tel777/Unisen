@@ -26,7 +26,7 @@ public class RankProvider extends ContentProvider {
 	// ContentResolver contentResolver = getContentResolver();
 	//
 	// ContentValues contentValues = new ContentValues();
-	// contentValues.put("score", スコア);
+	// contentValues.put("score", スコア); <- 今回使わない
 	// contentValues.put("average", 平均点);
 	// contentValues.put("date", System.currentTimeMills());
 	// contentResolver.insert(Ranks.CONTENT_URI, contentValues);
@@ -35,7 +35,7 @@ public class RankProvider extends ContentProvider {
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
 		SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-		int rowId = (int) db.insert("ranks", null, values);
+		int rowId = (int) db.insert(DatabaseOpenHelper.TIME_TABLE, null, values);
 		
 		if (rowId != -1) {
 			return Uri.withAppendedPath(uri, String.valueOf(rowId));
@@ -56,7 +56,7 @@ public class RankProvider extends ContentProvider {
 		SQLiteDatabase db = mOpenHelper.getReadableDatabase();
 		
 		SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-		qb.setTables("ranks");
+		qb.setTables(DatabaseOpenHelper.TIME_TABLE);
 		
 		Cursor ret = qb.query(db, projectionIn, selection, selectionArgs, null, null, sortOrder);
 		

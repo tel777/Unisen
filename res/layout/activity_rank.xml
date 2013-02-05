@@ -4,10 +4,42 @@
     android:layout_height="match_parent"
     tools:context=".RankActivity" >
 
-    <ListView 
-       android:id="@+id/rank_list"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-        />
+    <LinearLayout
+        android:id="@+id/column_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="left"
+            android:text="順位"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="left"
+            android:text="タイム"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="left"
+            android:text="日付"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/rank_list"
+        android:layout_below="@id/column_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
 
 </RelativeLayout>
