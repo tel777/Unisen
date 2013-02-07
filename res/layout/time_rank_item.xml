@@ -6,28 +6,22 @@
 
     <TextView
         android:id="@+id/rank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/RowItem"
         android:layout_weight="3"
-        android:gravity="center_horizontal"
-        android:textSize="20sp" />
+        />
     
     <TextView
         android:id="@+id/average_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/RowItem"
         android:layout_weight="4"
-        android:gravity="center_horizontal"
         android:text="10.5"
-        android:textSize="20sp" />
+        />
 
     <TextView
         android:id="@+id/date_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/RowItem"
         android:layout_weight="4"
-        android:gravity="center_horizontal"
         android:text="2013/01/22 10:11:12"
-        android:textSize="20sp" />
+        />
 
 </LinearLayout>
