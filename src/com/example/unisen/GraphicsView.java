@@ -9,11 +9,13 @@ import android.view.View;
 public class GraphicsView extends View {
 	private static float Wran;
 	private static float Hran;
+	private static float radius;
 	
-	public GraphicsView(Context context, float Wran, float Hran) {
+	public GraphicsView(Context context, float Wran, float Hran, float radius) {
 		super(context);
 		this.Wran = Wran;
 		this.Hran = Hran;
+		this.radius = radius;
 	}
 	  // onDrawをオーバーライドして描画処理を作成する。
     @Override
@@ -35,7 +37,7 @@ public class GraphicsView extends View {
         // そこで下記のアンチエイリアス(円滑化)をONにします。
         paint.setAntiAlias(true);
         
-        canvas.drawCircle(Wran, Hran, 40.0f, paint);
+        canvas.drawCircle(Wran, Hran, radius, paint);
     }
 
 }

@@ -33,7 +33,7 @@ public class SubActivity extends Activity {
 		// main.xmlのGUIにはGraphicsViewがないため、
         // Viewクラスを継承したGraphicsViewを自分で作成
         // 画面に登録する
-        setContentView(new GraphicsView(this, Wran, Hran ) );
+        //setContentView(new GraphicsView(this, Wran, Hran ) );
         countDown();
 	}  
     
@@ -89,7 +89,7 @@ public class SubActivity extends Activity {
         }
 
         // 再描画
-        setContentView(new GraphicsView(this, Wran, Hran ) );
+       // setContentView(new GraphicsView(this, Wran, Hran ) );
 
         return true;
     }
