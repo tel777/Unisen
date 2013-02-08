@@ -13,13 +13,21 @@
         android:contentDescription="UNISEN" />
 
     <Button
-        android:id="@+id/start_id"
+        android:id="@+id/start_20_id"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
         android:layout_marginTop="6dp"
-        android:text="START" />
+        android:text="20START" />
 
+    <Button
+        android:id="@+id/start_40_id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:layout_marginTop="6dp"
+        android:text="40START" />
+    
     <Button
         android:id="@+id/rank_id"
         android:layout_width="100dp"
