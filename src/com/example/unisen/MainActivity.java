@@ -13,7 +13,8 @@ public class MainActivity extends Activity {
 	private float Wran;
     private float Hran; 
     private int radius = 40;    //半径
-    private int count = 10;    //何回おすか
+    private int count = 11;    //何回おすか(+1する)
+    long start = System.currentTimeMillis();	//時間計測開始
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +53,12 @@ public class MainActivity extends Activity {
           
             	count = count - 1;
             	if (count == 0){
+            	    long stop = System.currentTimeMillis();
+            	    long diff = stop - start;
             		Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+            		intent.putExtra("ResultTime", diff);
     				startActivity(intent);
+    				finish();
             	}
             	//画面サイズ確認
             	WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);

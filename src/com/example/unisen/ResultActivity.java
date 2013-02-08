@@ -1,18 +1,31 @@
 package com.example.unisen;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.widget.Button;
-import android.view.View;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class ResultActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_result);
+		
+		//time表示
+		Intent intent = getIntent();
+		double ResultTime = intent.getLongExtra("ResultTime", 10);
+		TextView result_time = (TextView)findViewById(R.id.result_time);
+		ResultTime = ResultTime/1000;
+		result_time.setText(String.valueOf(ResultTime));
+	
+		//日付表示
+		TextView date = (TextView)findViewById(R.id.date);
+		date.setText(String.valueOf(""));
 		
 		Button homebutton = (Button)findViewById(R.id.homebutton_id);
         homebutton.setOnClickListener(new View.OnClickListener() {
