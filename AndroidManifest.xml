@@ -44,8 +44,19 @@
         </activity>
 
         <provider
-            android:name="RankProvider"
+            android:name="com.example.unisen.RankProvider"
             android:authorities="com.example.unisen" />
+
+        <activity
+            android:name="com.example.unisen.CallBackActivity"
+            android:label="@string/title_activity_call_back" >
+           <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="Callback" />
+            </intent-filter> 
+        </activity>
     </application>
 
 </manifest>
