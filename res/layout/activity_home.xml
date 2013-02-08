@@ -2,49 +2,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".MainActivity" >
-    
+
     <ImageView
         android:id="@+id/unisen_photo_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="UNISEN"
-        />
-	<LinearLayout 
-	    android:layout_width="wrap_content"
+        android:contentDescription="UNISEN" />
+
+    <Button
+        android:id="@+id/start_id"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-	    >
-	    <Button 
-	       	android:id="@+id/start_id"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="START"
-	        />
-	    <Button
-	       	android:id="@+id/rank_id"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="RANKING"
-	        />
-	    <Button
-	       	android:id="@+id/tips_id"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="TIPS"
-	        />
-    </LinearLayout>
-    <Button 
-       	android:id="@+id/result_id"
+        android:background="@drawable/button_selector"
+        android:layout_marginTop="6dp"
+        android:text="START" />
+
+    <Button
+        android:id="@+id/rank_id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:layout_marginTop="6dp"
+        android:text="RANKING" />
+
+    <Button
+        android:id="@+id/tips_id"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:layout_marginTop="6dp"
+        android:text="TIPS" />
+    <!-- 以下、デバック -->
+
+    <Button
+        android:id="@+id/result_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RESULT(for debug)"
-        />
-    <Button 
-       	android:id="@+id/sub_id"
+        android:text="RESULT(for debug)" />
+
+    <Button
+        android:id="@+id/sub_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SUB(for debug)"
-        />
+        android:text="SUB(for debug)" />
 
 </LinearLayout>

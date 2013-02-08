@@ -3,6 +3,8 @@ package com.example.unisen;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.Window;
+import android.view.WindowManager;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 import android.content.Intent;
@@ -13,6 +15,9 @@ public class CountActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//FullScreen
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);  
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_count);
 		countDown();
 	}
@@ -29,7 +34,7 @@ public class CountActivity extends Activity {
 			}
 			public void onFinish(){
 				
-				Intent intent = new Intent(CountActivity.this, SubActivity.class);
+				Intent intent = new Intent(CountActivity.this, MainActivity.class);
 				startActivity(intent);
 				finish();
 			}

@@ -25,7 +25,8 @@ public class GraphicsView extends View {
         Paint paint = new Paint();
 
         // 色セット
-        paint.setColor(Color.RED);
+        paint.setARGB(255,0,255,0);
+        //paint.setColor(Color.RED);
         // Viewの描画エリアはcanvasという名前になっているため、
         // ここにdwawCircleで点を描く
         // (円中心座標X、円中心座標Y、半径幅px)となります。
