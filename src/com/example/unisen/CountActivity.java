@@ -33,8 +33,12 @@ public class CountActivity extends Activity {
 				}
 			}
 			public void onFinish(){
-				
+				//回数指定(20or40)
+			    Intent intentCount = getIntent();
+			    int count = intentCount.getIntExtra("Count", 20);   //何回おすか(+1する)
+			    
 				Intent intent = new Intent(CountActivity.this, MainActivity.class);
+				intent.putExtra("Count", count);
 				startActivity(intent);
 				finish();
 			}

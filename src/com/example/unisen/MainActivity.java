@@ -13,7 +13,8 @@ public class MainActivity extends Activity {
 	private float Wran;
     private float Hran; 
     private int radius = 40;    //半径
-    private int count = 11;    //何回おすか(+1する)
+    private int count;
+    private int dummycount;		//回数を数える
     long start = System.currentTimeMillis();	//時間計測開始
 
 	@Override
@@ -23,6 +24,10 @@ public class MainActivity extends Activity {
 		//FullScreen
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);  
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//回数指定(20or40)
+	    Intent intent = getIntent();
+	    count = intent.getIntExtra("Count", 20);   //何回おすか(+1する)
+	    dummycount = count;
 		//画面サイズ確認
 		WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
 		Display dp = wm.getDefaultDisplay();
@@ -51,12 +56,13 @@ public class MainActivity extends Activity {
         if (Wran-radius < x1 && x1 < Wran + radius) {
             if (Hran-radius < y1 && y1 < Hran + radius ) {
           
-            	count = count - 1;
-            	if (count == 0){
+            	dummycount = dummycount - 1;
+            	if (dummycount == 0){
             	    long stop = System.currentTimeMillis();
             	    long diff = stop - start;
             		Intent intent = new Intent(MainActivity.this, ResultActivity.class);
             		intent.putExtra("ResultTime", diff);
+            		intent.putExtra("Count", count);
     				startActivity(intent);
     				finish();
             	}

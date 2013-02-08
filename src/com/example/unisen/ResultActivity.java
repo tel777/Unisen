@@ -21,6 +21,7 @@ public class ResultActivity extends Activity {
 		// time表示
 		Intent intent = getIntent();
 		double ResultTime = intent.getLongExtra("ResultTime", 10);
+		int count = intent.getIntExtra("Count", 20);
 		
 		// set TextView
 		TextView result_time = (TextView) findViewById(R.id.result_time);
@@ -28,8 +29,8 @@ public class ResultActivity extends Activity {
 		result_time.setText(String.valueOf(ResultTime));
 
 		// 日付表示
-		//TextView date = (TextView) findViewById(R.id.date);
-		//date.setText(String.valueOf(""));
+		TextView date = (TextView) findViewById(R.id.count);
+		date.setText(String.valueOf(count+"回数"));
 
 		// Button
 		Button homeButton = (Button) findViewById(R.id.homebutton_id);

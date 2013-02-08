@@ -18,20 +18,31 @@ public class HomeActivity extends Activity {
         ImageView image = (ImageView)findViewById(R.id.unisen_photo_id);
         image.setImageResource(R.drawable.unisen_photo);
         
-        Button button_start = (Button)findViewById(R.id.start_id);
+        Button button_20_start = (Button)findViewById(R.id.start_20_id);
+        Button button_40_start = (Button)findViewById(R.id.start_40_id);
         Button button_rank = (Button)findViewById(R.id.rank_id);
         Button button_tips = (Button)findViewById(R.id.tips_id);
         // for debug
         Button button_result = (Button)findViewById(R.id.result_id);
         Button button_sub = (Button)findViewById(R.id.sub_id);
         
-        button_start.setOnClickListener(new View.OnClickListener() {
+        button_20_start.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
         		Intent intent = new Intent(HomeActivity.this, CountActivity.class);
+        		intent.putExtra("Count", 20);
         		startActivity(intent);
         		finish();
         	}
-        });    
+        });   
+        
+        button_40_start.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent intent = new Intent(HomeActivity.this, CountActivity.class);
+        		intent.putExtra("Count", 40);
+        		startActivity(intent);
+        		finish();
+        	}
+        });   
         
         button_rank.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
