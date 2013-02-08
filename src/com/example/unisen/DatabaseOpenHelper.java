@@ -14,10 +14,10 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	public static final String COLUMN_DATE    = "date";
 	public static final String SCORE_TABLE    = "ranks_score";
 	public static final String TIME_TABLE     = "ranks_time";
+	public static final String TABLE_20 = "twenty_table";
+	public static final String TABLE_40 = "forty_table";
 	
 	private static final int DATABASE_VERSION = 1;
-	
-	
 	
 	public DatabaseOpenHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -33,26 +33,31 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 				COLUMN_AVERAGE +" REAL," +
 				COLUMN_DATE + " INTEGER);"
 				);
-		// used
-		db.execSQL("CREATE TABLE " + TIME_TABLE + " (" + 
+		// used count 20
+		db.execSQL("CREATE TABLE " + TABLE_20 + " (" + 
 				COLUMN_ID +" INTEGER PRIMARY KEY," +
 				COLUMN_AVERAGE +" REAL," +
 				COLUMN_DATE + " INTEGER);"
 				);
-		
+		// used count 20
+		db.execSQL("CREATE TABLE " + TABLE_40 + " (" + 
+				COLUMN_ID +" INTEGER PRIMARY KEY," +
+				COLUMN_AVERAGE +" REAL," +
+				COLUMN_DATE + " INTEGER);"
+				);
 		Log.d("", "CREATE DB");
 		
 		// insert dummy data to ranks_score
-		String insertMe = "INSERT INTO " + SCORE_TABLE +
-		"("+ COLUMN_SCORE +", " + COLUMN_AVERAGE + ", " + COLUMN_DATE + ") VALUES";
-		db.execSQL(insertMe + "(11111, 40.5, 1357896755);");
-		db.execSQL(insertMe + "(1234567, 20.5, 1357983155);");
+//		String insertMe = "INSERT INTO " + SCORE_TABLE +
+//		"("+ COLUMN_SCORE +", " + COLUMN_AVERAGE + ", " + COLUMN_DATE + ") VALUES";
+//		db.execSQL(insertMe + "(11111, 40.5, 1357896755);");
+//		db.execSQL(insertMe + "(1234567, 20.5, 1357983155);");
 		
 		// insert dummy data to ranks_time
-		insertMe = "INSERT INTO " + TIME_TABLE +
-		"(" + COLUMN_AVERAGE + ", " + COLUMN_DATE + ") VALUES";
-		db.execSQL(insertMe + "(40.5, 1357896755);");
-		db.execSQL(insertMe + "(20.5, 1357983155);");
+//		insertMe = "INSERT INTO " + TIME_TABLE +
+//		"(" + COLUMN_AVERAGE + ", " + COLUMN_DATE + ") VALUES";
+//		db.execSQL(insertMe + "(40.5, 1357896755);");
+//		db.execSQL(insertMe + "(20.5, 1357983155);");
 	}
 
 	@Override

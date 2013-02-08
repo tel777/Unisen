@@ -10,10 +10,14 @@ public class Ranks {
 	
 	//
 	private static final String[] RANK_QUERY_COLUMNS = {"_id", "average", "date"};
-	public static final Uri CONTENT_URI = Uri.parse("content://com.example.unisen");
+	public static final Uri CONTENT_URI_20 = Uri.parse("content://com.example.unisen/"+DatabaseOpenHelper.TABLE_20);
+	public static final Uri CONTENT_URI_40 = Uri.parse("content://com.example.unisen/"+DatabaseOpenHelper.TABLE_40);
 			
-	public static Cursor getRanksCursor(ContentResolver contentResolver) {
-		return contentResolver.query(CONTENT_URI, RANK_QUERY_COLUMNS, null, null, "average DESC");
+	public static Cursor getRanks20Cursor(ContentResolver contentResolver) {
+		return contentResolver.query(CONTENT_URI_20, RANK_QUERY_COLUMNS, null, null, "average DESC");
+	}
+	public static Cursor getRanks40Cursor(ContentResolver contentResolver) {
+		return contentResolver.query(CONTENT_URI_40, RANK_QUERY_COLUMNS, null, null, "average DESC");
 	}
 	
 }

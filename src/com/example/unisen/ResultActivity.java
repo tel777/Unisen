@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -44,11 +45,19 @@ public class ResultActivity extends Activity {
 		});
 	
 		// DBに登録
+		
+		Uri uri;
+		if(count == 20) {
+			uri = Ranks.CONTENT_URI_20;
+		} else {
+			uri = Ranks.CONTENT_URI_40;
+		}
+		
 		 ContentResolver contentResolver = getContentResolver();
 		 ContentValues contentValues = new ContentValues();
 		 contentValues.put("average", ResultTime);
 		 contentValues.put("date", System.currentTimeMillis());
-		 contentResolver.insert(Ranks.CONTENT_URI, contentValues);
+		 contentResolver.insert(uri, contentValues);
 		
 	}
 

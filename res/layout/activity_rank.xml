@@ -7,10 +7,39 @@
     android:padding="8dp"
     tools:context=".RankActivity" >
 
+       <RadioGroup 
+           android:id="@+id/tab_group"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           >
+           <RadioButton 
+               android:id="@+id/twenty_ranks"
+               android:layout_width="0dp"
+               android:layout_height="38dp"
+               android:layout_weight="1"
+               android:gravity="center_horizontal"
+               android:text="20"
+               android:checked="true"
+               android:textSize="20sp"
+               />
+           <RadioButton 
+               android:id="@+id/forty_ranks"
+               android:layout_width="0dp"
+               android:layout_height="38dp"
+               android:layout_weight="1"
+               android:gravity="center_horizontal"
+               android:text="40"
+               android:textSize="20sp"
+               />
+           
+       </RadioGroup> 
+    
     <LinearLayout
         android:id="@+id/column_header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tab_group"
         android:orientation="horizontal" >
 
         <TextView
