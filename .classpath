@@ -4,5 +4,10 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="/Users/wkodate/Downloads/twitter4j-3.0.3/lib/twitter4j-core-3.0.3.jar" sourcepath="/Users/wkodate/Downloads/twitter4j-3.0.3/twitter4j-core/src">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/wkodate/Downloads/twitter4j-3.0.3/twitter4j-core/javadoc/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
