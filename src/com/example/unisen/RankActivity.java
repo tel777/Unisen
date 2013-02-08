@@ -36,8 +36,8 @@ public class RankActivity extends Activity {
 				// 日付を設定
 				if(columnIndex == cursor.getColumnIndex(DatabaseOpenHelper.COLUMN_DATE)) {
 					long unixtime = cursor.getLong(columnIndex);
-					Date date = new Date(unixtime * 1000);
-					SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+					Date date = new Date(unixtime);
+					SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm");
 					((TextView) view).setText(format.format(date));
 					return true;
 				}

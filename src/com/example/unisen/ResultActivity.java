@@ -1,6 +1,8 @@
 package com.example.unisen;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,28 +15,40 @@ public class ResultActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.activity_result);
-		
-		//time表示
+
+		// time表示
 		Intent intent = getIntent();
 		double ResultTime = intent.getLongExtra("ResultTime", 10);
-		TextView result_time = (TextView)findViewById(R.id.result_time);
-		ResultTime = ResultTime/1000;
-		result_time.setText(String.valueOf(ResultTime));
-	
-		//日付表示
-		TextView date = (TextView)findViewById(R.id.date);
-		date.setText(String.valueOf(""));
 		
-		Button homebutton = (Button)findViewById(R.id.homebutton_id);
-        homebutton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                        Intent intent = new Intent(ResultActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                        finish();
-                }           
-        });         
+		// set TextView
+		TextView result_time = (TextView) findViewById(R.id.result_time);
+		ResultTime = ResultTime / 1000;
+		result_time.setText(String.valueOf(ResultTime));
+
+		// 日付表示
+		//TextView date = (TextView) findViewById(R.id.date);
+		//date.setText(String.valueOf(""));
+
+		// Button
+		Button homeButton = (Button) findViewById(R.id.homebutton_id);
+		homeButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Intent intent = new Intent(ResultActivity.this,
+						HomeActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
+	
+		// DBに登録
+		 ContentResolver contentResolver = getContentResolver();
+		 ContentValues contentValues = new ContentValues();
+		 contentValues.put("average", ResultTime);
+		 contentValues.put("date", System.currentTimeMillis());
+		 contentResolver.insert(Ranks.CONTENT_URI, contentValues);
+		
 	}
 
 	@Override

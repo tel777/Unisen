@@ -26,13 +26,14 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		//date is UNIXTIME
+		// unused
 		db.execSQL("CREATE TABLE " + SCORE_TABLE + " (" + 
 				COLUMN_ID +" INTEGER PRIMARY KEY," +
 				COLUMN_SCORE + " INTEGER," +
 				COLUMN_AVERAGE +" REAL," +
 				COLUMN_DATE + " INTEGER);"
 				);
-		
+		// used
 		db.execSQL("CREATE TABLE " + TIME_TABLE + " (" + 
 				COLUMN_ID +" INTEGER PRIMARY KEY," +
 				COLUMN_AVERAGE +" REAL," +
