@@ -46,6 +46,8 @@ public class RankActivity extends Activity {
 				
 				// 時間をセット
 				if (columnIndex == cursor.getColumnIndex(DatabaseOpenHelper.COLUMN_AVERAGE)) {
+					double score = cursor.getDouble(columnIndex);
+					((TextView) view).setText(String.valueOf(score));
 					((TextView) view).setTypeface(mFace);
 					return true;
 				}
