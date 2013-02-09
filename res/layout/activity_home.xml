@@ -14,47 +14,16 @@
 
     <Button
         android:id="@+id/start_20_id"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:layout_marginTop="6dp"
-        android:text="20START" />
+        style="@style/Button"
+        android:text="20 Count" />
 
     <Button
         android:id="@+id/start_40_id"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:layout_marginTop="6dp"
-        android:text="40START" />
+        style="@style/Button"
+        android:text="40 Count" />
     
     <Button
         android:id="@+id/rank_id"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:layout_marginTop="6dp"
+        style="@style/Button"
         android:text="RANKING" />
-
-    <Button
-        android:id="@+id/tips_id"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:layout_marginTop="6dp"
-        android:text="TIPS" />
-    <!-- 以下、デバック -->
-
-    <Button
-        android:id="@+id/result_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RESULT(for debug)" />
-
-    <Button
-        android:id="@+id/sub_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SUB(for debug)" />
-
 </LinearLayout>

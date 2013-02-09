@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 import android.content.Intent;
+import android.graphics.Typeface;
 
 public class CountActivity extends Activity {
 
@@ -26,6 +27,8 @@ public class CountActivity extends Activity {
 		timer = new CountDownTimer( 4999, 1000 ){
 			TextView count_timer = (TextView)findViewById(R.id.count_id);
 			public void onTick(long millisUntilFinished){
+				Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Ostrich_Black.ttf");			
+				count_timer.setTypeface(face);
 				if ( (millisUntilFinished/1000)-1 == 0 ) {
 					count_timer.setText("START!");
 				} else {
@@ -51,6 +54,7 @@ public class CountActivity extends Activity {
 		super.onDestroy();
 		timer.cancel();
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_count, menu);
