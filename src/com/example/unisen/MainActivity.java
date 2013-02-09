@@ -3,6 +3,7 @@ package com.example.unisen;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -63,13 +64,10 @@ public class MainActivity extends Activity {
           
             	dummycount = dummycount - 1;
             	if (dummycount == 0){
-            	    long stop = System.currentTimeMillis();
-            	    long diff = stop - start;
-            		Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-            		intent.putExtra("ResultTime", diff);
-            		intent.putExtra("Count", count);
-    				startActivity(intent);
-    				finish();
+            		
+			        //Handler
+			        Handler handler = new Handler();
+            	    handler.postDelayed(new splashHandler(), 1000);
             	}
             	//画面サイズ確認
             	WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
@@ -87,4 +85,16 @@ public class MainActivity extends Activity {
 
         return true;
     }
+    
+    class splashHandler implements Runnable {
+    	public void run() {
+    		long stop = System.currentTimeMillis();
+    		long diff = stop - start -1000;
+    		Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+    		intent.putExtra("ResultTime", diff);
+    		intent.putExtra("Count", count);
+    		startActivity(intent);
+    		finish();
+    	}
+    };
 }
