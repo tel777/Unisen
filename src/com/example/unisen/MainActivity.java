@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         radius = (float)metrics.scaledDensity;
-        radius = radius * 40;
+        radius = radius * 30;
 		//random生成
         Wran = (float) Math.floor(Math.random() * ((width-radius - radius + 1)) + radius) ;
         Hran = (float) Math.floor(Math.random() * ((height-120 - radius + 1)) + radius) ;
