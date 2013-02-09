@@ -10,8 +10,8 @@
         android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
         android:textColor="#ffffff"
         android:textSize="60sp" />
 
@@ -27,9 +27,7 @@
         android:id="@+id/highScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:text="New High Score!"
+        android:text="New High Score!!"
         android:textColor="#57D99E"
         android:visibility="gone"
         android:textSize="50sp" />
