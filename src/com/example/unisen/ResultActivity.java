@@ -22,6 +22,7 @@ public class ResultActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_result);
+		setTitle("Result");
 		mFace = Utils.getFonts(getApplicationContext());
 
 		// time表示
