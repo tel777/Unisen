@@ -27,6 +27,7 @@ public class RankActivity extends Activity {
 		public RankCursorAdapter(Context context, int layout, Cursor c,
 				String[] from, int[] to, int flg) {
 			super(context, layout, c, from, to, flg);
+			setTitle("Ranking");
 			setViewBinder(new RankListViewBinder());
 		}
 
