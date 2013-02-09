@@ -13,11 +13,12 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="AppTheme" parent="@android:style/Theme.Black.NoTitleBar">
         <item name="android:background">#92231a</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <!-- titlebar's color -->
         <item name="android:windowTitleBackgroundStyle">@style/color</item>
+        <item name="android:actionBarStyle">@style/color</item>
     </style>
     <style name="color">
         <item name="android:background">#404040</item>
