@@ -29,7 +29,7 @@ public class MainToResultActivity extends Activity {
 			public void onTick(long millisUntilFinished){
 				Typeface face = Utils.getFonts(getApplicationContext()); 
 				count_timer.setTypeface(face);
-				count_timer.setText(String.valueOf(diff));
+				count_timer.setText("Finish!");
 			}
 			public void onFinish(){
 				//回数指定(20or40)
