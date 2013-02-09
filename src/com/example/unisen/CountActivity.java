@@ -2,7 +2,6 @@ package com.example.unisen;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.Window;
 import android.view.WindowManager;
 import android.os.CountDownTimer;

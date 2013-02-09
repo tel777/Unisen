@@ -64,10 +64,13 @@ public class MainActivity extends Activity {
           
             	dummycount = dummycount - 1;
             	if (dummycount == 0){
-            		
-			        //Handler
-			        Handler handler = new Handler();
-            	    handler.postDelayed(new splashHandler(), 1000);
+            	    long stop = System.currentTimeMillis();
+            	    long diff = stop - start -1000;
+            	    Intent intent = new Intent(MainActivity.this, MainToResultActivity.class);
+            	    intent.putExtra("ResultTime", diff);
+            	    intent.putExtra("Count", count);
+            	    startActivity(intent);
+            	    finish();
             	}
             	//画面サイズ確認
             	WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
@@ -86,15 +89,4 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    class splashHandler implements Runnable {
-    	public void run() {
-    		long stop = System.currentTimeMillis();
-    		long diff = stop - start -1000;
-    		Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-    		intent.putExtra("ResultTime", diff);
-    		intent.putExtra("Count", count);
-    		startActivity(intent);
-    		finish();
-    	}
-    };
 }

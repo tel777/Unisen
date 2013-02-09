@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
-import android.util.Log;
 
 public class RankProvider extends ContentProvider {
 	private DatabaseOpenHelper mOpenHelper;
@@ -36,13 +35,11 @@ public class RankProvider extends ContentProvider {
 	public Uri insert(Uri uri, ContentValues values) {
 		SQLiteDatabase db = mOpenHelper.getWritableDatabase();
 		String selectTable = uri.getPathSegments().get(0);
-		Log.d("Unisen_DB", selectTable);
 		int rowId = (int) db.insert(selectTable, null, values);
 		
 		if (rowId != -1) {
 			return Uri.withAppendedPath(uri, String.valueOf(rowId));
 		} else {
-			Log.d("Unisen_DB", "miss");
 			return null;
 		}
 	}

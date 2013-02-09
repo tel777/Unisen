@@ -3,7 +3,6 @@ package com.example.unisen;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	
@@ -45,7 +44,6 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 				COLUMN_AVERAGE +" REAL," +
 				COLUMN_DATE + " INTEGER);"
 				);
-		Log.d("", "CREATE DB");
 		
 		// insert dummy data to ranks_score
 //		String insertMe = "INSERT INTO " + SCORE_TABLE +

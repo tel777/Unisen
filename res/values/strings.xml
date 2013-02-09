@@ -10,5 +10,6 @@
     <string name="title_activity_result">ResultActivity</string>
     <string name="title_activity_tips">TipsActivity</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main_to_result">MainToResultActivity</string>
 
 </resources>
