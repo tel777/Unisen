@@ -15,8 +15,6 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        setTitle("Home");
-        
         ImageView image = (ImageView)findViewById(R.id.title_icon_id);
         image.setImageResource(R.drawable.title_icon);
         
