@@ -9,7 +9,6 @@ import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;

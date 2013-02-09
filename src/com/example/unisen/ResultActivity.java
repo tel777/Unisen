@@ -77,13 +77,12 @@ public class ResultActivity extends Activity {
 			}
 		});
 
-
 		// DB周りの処理
 		Uri uri;
 		Cursor cursor;
 		TextView highScoreView = (TextView) findViewById(R.id.highScore);
 		highScoreView.setTypeface(mFace);
-		
+
 		if (count == 20) {
 			cursor = Ranks.getRanks20Cursor(getContentResolver());
 			uri = Ranks.CONTENT_URI_20;
@@ -92,11 +91,16 @@ public class ResultActivity extends Activity {
 			uri = Ranks.CONTENT_URI_40;
 		}
 		// High Scoreか確認
-		cursor.moveToFirst();
-		int averageIndex = cursor.getColumnIndex(DatabaseOpenHelper.COLUMN_AVERAGE);
-		double highScore = cursor.getDouble(averageIndex);
-		
-		if (highScore > ResultTime) {
+		if (cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			int averageIndex = cursor
+					.getColumnIndex(DatabaseOpenHelper.COLUMN_AVERAGE);
+			double highScore = cursor.getDouble(averageIndex);
+
+			if (highScore > ResultTime) {
+				highScoreView.setVisibility(View.VISIBLE);
+			}
+		} else {
 			highScoreView.setVisibility(View.VISIBLE);
 		}
 
