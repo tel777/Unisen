@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.unisen"
+    package="com.Ichif1205.unisen"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.unisen.HomeActivity"
+            android:name="com.Ichif1205.unisen.HomeActivity"
             android:configChanges="keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
@@ -25,42 +25,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.unisen.SubActivity"
+            android:name="com.Ichif1205.unisen.SubActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/title_activity_sub"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.unisen.CountActivity"
+            android:name="com.Ichif1205.unisen.CountActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/title_activity_count"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.unisen.RankActivity"
+            android:name="com.Ichif1205.unisen.RankActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/title_activity_rank"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.unisen.ResultActivity"
+            android:name="com.Ichif1205.unisen.ResultActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/title_activity_result"
             android:screenOrientation="portrait" >
         </activity>
 
         <provider
-            android:name="com.example.unisen.RankProvider"
-            android:authorities="com.example.unisen" />
+            android:name="com.Ichif1205.unisen.RankProvider"
+            android:authorities="com.Ichif1205.unisen" />
 
         <activity
-            android:name="com.example.unisen.MainActivity"
+            android:name="com.Ichif1205.unisen.MainActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.unisen.MainToResultActivity"
+            android:name="com.Ichif1205.unisen.MainToResultActivity"
             android:label="@string/title_activity_main_to_result" >
         </activity>
     </application>

@@ -1,4 +1,4 @@
-package com.example.unisen;
+package com.Ichif1205.unisen;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

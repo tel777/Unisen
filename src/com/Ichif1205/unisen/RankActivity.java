@@ -1,7 +1,9 @@
-package com.example.unisen;
+package com.Ichif1205.unisen;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import com.Ichif1205.unisen.R;
 
 import android.app.Activity;
 import android.content.Context;

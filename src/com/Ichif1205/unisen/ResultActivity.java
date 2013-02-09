@@ -1,4 +1,6 @@
-package com.example.unisen;
+package com.Ichif1205.unisen;
+
+import com.Ichif1205.unisen.R;
 
 import android.app.Activity;
 import android.content.ContentResolver;
