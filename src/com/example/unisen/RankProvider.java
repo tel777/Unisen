@@ -35,11 +35,14 @@ public class RankProvider extends ContentProvider {
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
 		SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-		int rowId = (int) db.insert(DatabaseOpenHelper.TIME_TABLE, null, values);
+		String selectTable = uri.getPathSegments().get(0);
+		Log.d("Unisen_DB", selectTable);
+		int rowId = (int) db.insert(selectTable, null, values);
 		
 		if (rowId != -1) {
 			return Uri.withAppendedPath(uri, String.valueOf(rowId));
 		} else {
+			Log.d("Unisen_DB", "miss");
 			return null;
 		}
 	}
@@ -56,7 +59,8 @@ public class RankProvider extends ContentProvider {
 		SQLiteDatabase db = mOpenHelper.getReadableDatabase();
 		
 		SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-		qb.setTables(DatabaseOpenHelper.TIME_TABLE);
+		String selectTable = uri.getPathSegments().get(0);
+		qb.setTables(selectTable);
 		
 		Cursor ret = qb.query(db, projectionIn, selection, selectionArgs, null, null, sortOrder);
 		

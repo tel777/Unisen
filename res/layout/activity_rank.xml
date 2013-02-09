@@ -7,28 +7,52 @@
     android:padding="8dp"
     tools:context=".RankActivity" >
 
+       <RadioGroup 
+           android:id="@+id/tab_group"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           >
+           <RadioButton 
+               android:id="@+id/twenty_ranks"
+               style="@style/TabStyle"
+               android:text="20 Count"
+               android:checked="true"
+               />
+           <RadioButton 
+               android:id="@+id/forty_ranks"
+               style="@style/TabStyle"
+               android:text="40 Count"
+               />
+           
+       </RadioGroup> 
+    
     <LinearLayout
         android:id="@+id/column_header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tab_group"
         android:orientation="horizontal" >
 
         <TextView
+            android:id="@+id/header_rank"
             style="@style/RowHeader"
             android:layout_weight="3"
-            android:text="順位"
+            android:text="Rank"
             />
 
         <TextView
+            android:id="@+id/header_time"
             style="@style/RowHeader"
             android:layout_weight="4"
-            android:text="タイム"
+            android:text="Time"
             />
 
         <TextView
+            android:id="@+id/header_date"
             style="@style/RowHeader"
             android:layout_weight="4"
-            android:text="日付"
+            android:text="Date"
             />
     </LinearLayout>
 

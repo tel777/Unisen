@@ -3,6 +3,7 @@ package com.example.unisen;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -12,7 +13,7 @@ import android.view.WindowManager;
 public class MainActivity extends Activity {
 	private float Wran;
     private float Hran; 
-    private int radius = 40;    //半径
+    private float radius;    //半径
     private int count;
     private int dummycount;		//回数を数える
     long start = System.currentTimeMillis();	//時間計測開始
@@ -32,16 +33,21 @@ public class MainActivity extends Activity {
 		WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
 		Display dp = wm.getDefaultDisplay();
 		int width = dp.getWidth();
-		int height = dp.getHeight();
+		int height = dp.getHeight();	    
+        //解像度対応
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        radius = (float)metrics.scaledDensity;
+        radius = radius * 30;
 		//random生成
         Wran = (float) Math.floor(Math.random() * ((width-radius - radius + 1)) + radius) ;
         Hran = (float) Math.floor(Math.random() * ((height-120 - radius + 1)) + radius) ;
-		        
+		    
         //Toast.makeText(this, "s"+Wran, Toast.LENGTH_LONG).show();
         // main.xmlのGUIにはGraphicsViewがないため、
         // Viewクラスを継承したGraphicsViewを自分で作成
         // 画面に登録する
-        setContentView(new GraphicsView(this, Wran, Hran ) );
+        setContentView(new GraphicsView(this, Wran, Hran, radius ) );
 	}
 	/**
      * タッチイベント
@@ -78,16 +84,8 @@ public class MainActivity extends Activity {
         }
 
         // 再描画
-        setContentView(new GraphicsView(this, Wran, Hran ) );
+        setContentView(new GraphicsView(this, Wran, Hran, radius ) );
 
         return true;
     }
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-
 }
