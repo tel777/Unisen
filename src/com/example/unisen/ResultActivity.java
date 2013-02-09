@@ -82,11 +82,4 @@ public class ResultActivity extends Activity {
 		 contentResolver.insert(uri, contentValues);
 		
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_result, menu);
-		return true;
-	}
-
 }

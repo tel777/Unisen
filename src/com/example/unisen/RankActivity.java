@@ -6,11 +6,11 @@ import java.util.Date;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.Menu;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -22,6 +22,7 @@ public class RankActivity extends Activity {
 	private final String TAG = RankActivity.class.getSimpleName();
 	private Cursor mCursor;
 	private RadioGroup mTabGroup;
+	private Typeface mFace;
 
 	class RankCursorAdapter extends SimpleCursorAdapter {
 		public RankCursorAdapter(Context context, int layout, Cursor c,
@@ -34,15 +35,22 @@ public class RankActivity extends Activity {
 			@Override
 			public boolean setViewValue(View view, Cursor cursor,
 					int columnIndex) {
-				// 順位を設定
+				// 順位をセット
 				if (columnIndex == cursor
 						.getColumnIndex(DatabaseOpenHelper.COLUMN_ID)) {
 					int rank = cursor.getPosition() + 1;
 					((TextView) view).setText(String.valueOf(rank));
+					((TextView) view).setTypeface(mFace);
+					return true;
+				}
+				
+				// 時間をセット
+				if (columnIndex == cursor.getColumnIndex(DatabaseOpenHelper.COLUMN_AVERAGE)) {
+					((TextView) view).setTypeface(mFace);
 					return true;
 				}
 
-				// 日付を設定
+				// 日付をセット
 				if (columnIndex == cursor
 						.getColumnIndex(DatabaseOpenHelper.COLUMN_DATE)) {
 					long unixtime = cursor.getLong(columnIndex);
@@ -50,6 +58,7 @@ public class RankActivity extends Activity {
 					SimpleDateFormat format = new SimpleDateFormat(
 							"yy/MM/dd HH:mm");
 					((TextView) view).setText(format.format(date));
+					((TextView) view).setTypeface(mFace);
 					return true;
 				}
 
@@ -62,12 +71,25 @@ public class RankActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rank);
-
+		setFonts();
 		setEventListener();
 
 		mCursor = Ranks.getRanks20Cursor(getContentResolver());
 		
 		showListView();
+	}
+	
+	private void setFonts() {
+		mFace = Utils.getFonts(getApplicationContext());
+		
+		// Tab
+		((RadioButton) findViewById(R.id.twenty_ranks)).setTypeface(mFace);
+		((RadioButton) findViewById(R.id.forty_ranks)).setTypeface(mFace);
+		
+		// Header
+		((TextView) findViewById(R.id.header_rank)).setTypeface(mFace);
+		((TextView) findViewById(R.id.header_time)).setTypeface(mFace);
+		((TextView) findViewById(R.id.header_date)).setTypeface(mFace);
 	}
 
 	/**
@@ -108,11 +130,4 @@ public class RankActivity extends Activity {
 
 		lv.setAdapter(adapter);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_rank, menu);
-		return true;
-	}
-
 }
