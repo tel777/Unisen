@@ -19,7 +19,7 @@ public class HomeActivity extends Activity {
         ImageView image = (ImageView)findViewById(R.id.unisen_photo_id);
         image.setImageResource(R.drawable.unisen_photo);
         
-        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Ostrich_Black.ttf");
+        Typeface face = Utils.getFonts(getApplicationContext());
         
         Button button_20_start = (Button)findViewById(R.id.start_20_id);
         button_20_start.setTypeface(face);
@@ -52,11 +52,5 @@ public class HomeActivity extends Activity {
         		startActivity(intent);
         	}
         });
-    }
-    
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
     }
 }
