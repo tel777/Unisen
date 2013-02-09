@@ -14,10 +14,10 @@ public class Ranks {
 	public static final Uri CONTENT_URI_40 = Uri.parse("content://com.example.unisen/"+DatabaseOpenHelper.TABLE_40);
 			
 	public static Cursor getRanks20Cursor(ContentResolver contentResolver) {
-		return contentResolver.query(CONTENT_URI_20, RANK_QUERY_COLUMNS, null, null, "average ASC");
+		return contentResolver.query(CONTENT_URI_20, RANK_QUERY_COLUMNS, null, null, "average ASC" + " LIMIT 10");
 	}
 	public static Cursor getRanks40Cursor(ContentResolver contentResolver) {
-		return contentResolver.query(CONTENT_URI_40, RANK_QUERY_COLUMNS, null, null, "average ASC");
+		return contentResolver.query(CONTENT_URI_40, RANK_QUERY_COLUMNS, null, null, "average ASC" + " LIMIT 10");
 	}
 	
 }
