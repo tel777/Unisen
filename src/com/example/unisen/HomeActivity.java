@@ -17,8 +17,8 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.activity_home);
         setTitle("Home");
         
-        ImageView image = (ImageView)findViewById(R.id.unisen_photo_id);
-        image.setImageResource(R.drawable.unisen_photo);
+        ImageView image = (ImageView)findViewById(R.id.title_icon_id);
+        image.setImageResource(R.drawable.title_icon);
         
         Typeface face = Utils.getFonts(getApplicationContext());
         

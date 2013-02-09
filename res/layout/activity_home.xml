@@ -7,7 +7,7 @@
     tools:context=".MainActivity" >
 
     <ImageView
-        android:id="@+id/unisen_photo_id"
+        android:id="@+id/title_icon_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="UNISEN" />
